@@ -1,8 +1,9 @@
 import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import './App.css'
+import Html from './Html'
 
-function App() {
+function App_() {
   const [count, setCount] = useState(0)
 
   return (
@@ -28,6 +29,16 @@ function App() {
         Click on the Vite and React logos to learn more
       </p>
     </>
+  )
+}
+
+const App = ({ head }: { head?: string | TrustedHTML }) => {
+  return (
+    <Html head={head}>
+      <div id="root">
+        <App_ />
+      </div>
+    </Html>
   )
 }
 
